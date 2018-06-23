@@ -44,7 +44,7 @@ public class OrderActivity extends AppCompatActivity {
                     Statement stmt = conn.createStatement();
                     Intent i=getIntent();
                     String id=i.getStringExtra("UserId");
-                    String sql="select CustomerName,Restaurant,Food,CTime,Ltime,Address from Orders where UserId="+id+";";
+                    String sql="select CustomerName,Restaurant,Food,Phone,Address from Orders where UserId="+id+";";
                     System.out.print(id);
                     final ResultSet rs = stmt.executeQuery(sql);
 
@@ -60,7 +60,6 @@ public class OrderActivity extends AppCompatActivity {
                                     TextView textView3=new TextView(getApplication());
                                     TextView textView4=new TextView(getApplication());
                                     TextView textView5=new TextView(getApplication());
-                                    TextView textView6=new TextView(getApplication());
                                     TableRow tableRow=new TableRow(getApplication());
                                     textView.setText(rs.getString("CustomerName"));
                                     textView.setTextColor(Color.rgb(255, 0, 0));
@@ -75,18 +74,14 @@ public class OrderActivity extends AppCompatActivity {
                                     textView3.setTextColor(Color.rgb(255, 0, 0));
                                     textView3.setLayoutParams(textpra.getLayoutParams());
                                     tableRow.addView(textView3);
-                                    textView4.setText(rs.getTime("CTime").toString());
+                                    textView4.setText(rs.getString("Phone"));
                                     textView4.setTextColor(Color.rgb(255, 0, 0));
                                     textView4.setLayoutParams(textpra.getLayoutParams());
                                     tableRow.addView(textView4);
-                                    textView5.setText(rs.getTime("LTime").toString());
+                                    textView5.setText(rs.getString("Address"));
                                     textView5.setTextColor(Color.rgb(255, 0, 0));
                                     textView5.setLayoutParams(textpra.getLayoutParams());
                                     tableRow.addView(textView5);
-                                    textView6.setText(rs.getString("Address"));
-                                    textView6.setTextColor(Color.rgb(255, 0, 0));
-                                    textView6.setLayoutParams(textpra.getLayoutParams());
-                                    tableRow.addView(textView6);
                                     tableLayout.addView(tableRow);
                                 }
                             } catch (SQLException e) {
