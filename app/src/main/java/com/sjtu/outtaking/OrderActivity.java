@@ -45,7 +45,7 @@ public class OrderActivity extends AppCompatActivity {
                     Intent i=getIntent();
                     String id=i.getStringExtra("UserId");
                     String sql="select CustomerName,Restaurant,Food,CTime,Ltime,Address from Orders where UserId="+id+";";
-
+                    System.out.print(id);
                     final ResultSet rs = stmt.executeQuery(sql);
 
 

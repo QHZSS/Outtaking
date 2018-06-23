@@ -7,21 +7,24 @@
     <TableLayout
 
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:gravity="center_vertical"
         android:stretchColumns="0,3"
         android:visibility="visible">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></TableRow>
+            android:layout_height="wrap_content">
+
+        </TableRow>
 
         <TextView
 
             android:layout_width="match_parent"
 
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
 
             android:text="外卖小帮手"
 
@@ -32,41 +35,23 @@
 
         <TextView
 
-
-
             android:id="@+id/error"
-
-
-
-            android:visibility="invisible"
-
-
 
             android:layout_width="match_parent"
 
-
-
             android:layout_height="40dp"
-
-
 
             android:text="This username has been used"
 
-
-
             android:textAlignment="center"
-
-
 
             android:textColor="@android:color/holo_red_light"
 
-
-
             android:textSize="16sp"
 
+            android:textStyle="bold"
 
-
-            android:textStyle="bold" />
+            android:visibility="invisible" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -127,9 +112,9 @@
 
                 android:layout_height="wrap_content"
 
-                android:minWidth="220dp"
-
                 android:inputType="textPassword"
+
+                android:minWidth="220dp"
 
                 android:textSize="24dp" />
 
@@ -162,7 +147,6 @@
                 android:layout_width="wrap_content"
 
                 android:layout_height="wrap_content"
-
 
                 android:minWidth="220dp"
 
@@ -222,7 +206,7 @@
 
         <TableRow android:layout_width="100dp">
 
-            <TextView android:layout_width="100dp" />
+            <TextView android:layout_width="69dp" />
 
             <Button
 
@@ -233,6 +217,8 @@
                 android:layout_width="200dp"
 
                 android:layout_height="wrap_content"
+
+                android:onClick="skip"
 
                 android:text="注册" />
 
@@ -253,6 +239,7 @@
 
                 android:layout_height="wrap_content"
 
+                android:onClick="skip"
                 android:text="返回" />
 
             <TextView android:layout_width="match_parent" />
