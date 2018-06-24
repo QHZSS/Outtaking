@@ -28,7 +28,8 @@ public class CalculateDistanceMatrix {
     String url1,url2;
 
     public int[][] getMatrix(Vector<String> addresses,String ll1,String ll2){
-        matrix=new int[][]{{0,623,1412,799,479,1722,1180,564,894,397},
+                matrix = new int[][]
+                {{0,623,1412,799,479,1722,1180,564,894,397},
                 {623,0,883,691,370,1193,618,211,1000,606},
                 {1412,883,0,1373,966,306,264,939,1522,1327},
                 {799,691,1373,0,1010,1683,1108,813,1520,1114},
@@ -40,7 +41,6 @@ public class CalculateDistanceMatrix {
                 {397,606,1327,1114,416,1460,1138,547,481,0}};
 //        int length=addresses.size()+1;
 //        matrix=new int[length][length];
-//
 //        if(!ll2.isEmpty()) {
 //            url1 = "http://api.map.baidu.com/routematrix/v2/riding?"
 //                    + "output=json&origins=" + ll1 + "&destinations=" + ll1+"|"+ll2 + "&ak=x2Y5ecxTQ45YAEAzgzrFiZt3p1OQOEO0";
@@ -114,16 +114,15 @@ public class CalculateDistanceMatrix {
 //                e.printStackTrace();
 //            }
 //        }
-//
 //        for(int i=0;i<length;i++){
 //            for(int j=0;j<length;j++){
-//                Log.d("MATRIX", String.valueOf(matrix[i][j]));
+//                System.out.println("MATRIX: " + String.valueOf(matrix[i][j]));
 //            }
 //        }
         return null;
     }
 
-    public int[][] getMatrix() {
-        return matrix;
+    public int[][] getMatrix(){
+        return this.matrix;
     }
 }

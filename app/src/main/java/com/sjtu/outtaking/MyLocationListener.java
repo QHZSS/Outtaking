@@ -24,6 +24,7 @@ public class MyLocationListener extends BDAbstractLocationListener {
     private Marker mMarker;
     private boolean isFirst = true;
     private LatLng curLocation;
+
     public MyLocationListener(BaiduMap mMap, Marker mMarker){
         this.mMap = mMap;
         this.mMarker = mMarker;
@@ -36,7 +37,8 @@ public class MyLocationListener extends BDAbstractLocationListener {
 
         LatLng latLng = new LatLng(bdLocation.getLatitude(),bdLocation.getLongitude());
         setCurLocation(latLng);
-        if(mMarker==null) {
+
+        if(mMarker == null) {
             MarkerOptions options = new MarkerOptions();
             options.position(latLng);
             options.draggable(true);
@@ -46,9 +48,10 @@ public class MyLocationListener extends BDAbstractLocationListener {
             //第一次的时候，通过强制类型转换将mMap.addOverlay(options) 变成Marker，因为它返回的其实是Overlay的
             //Overlay和Marker的父类，所以要强制类型转换
             mMarker = (Marker) mMap.addOverlay(options);
-        }else {
+        }else{
             mMarker.setPosition(latLng);
         }
+
 
         //设置获取的位置为中心点 。这里面的 参数是 LatLng
         if(isFirst) {
@@ -58,18 +61,16 @@ public class MyLocationListener extends BDAbstractLocationListener {
             isFirst = false;
         }
     }
+
     public LatLng getCurLocation(){
-
         return this.curLocation;
-
     }
-
-
 
     public void setCurLocation(LatLng curLocation){
-
         this.curLocation = curLocation;
-
     }
 
+    public void setmMarker(){
+        this.mMarker = null;
+    }
 }

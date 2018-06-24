@@ -27,28 +27,17 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
         new Thread(){
-
             @Override
-
             public void run(){
-
                 try{
-
-
                     Class.forName("com.mysql.jdbc.Driver");
-
                     String url = "jdbc:mysql://45.32.58.255:3306/Outtaking";
-
                     Connection conn = DriverManager.getConnection(url,"root","123456");
-
                     Statement stmt = conn.createStatement();
                     Intent i=getIntent();
                     String id=i.getStringExtra("UserId");
-                    String sql="select CustomerName,Restaurant,Food,Phone,Address from Orders where UserId="+id+";";
-                    System.out.print(id);
+                    String sql="select CustomerName,Restaurant,Food,Address,Phone from Orders where UserId="+id+";";
                     final ResultSet rs = stmt.executeQuery(sql);
-
-
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -87,23 +76,14 @@ public class OrderActivity extends AppCompatActivity {
                             } catch (SQLException e) {
                                 e.printStackTrace();
                             }
-
                         }
                     });
-
-
                 }catch(ClassNotFoundException e){
-
                     Log.v("final","fail to connect"+" "+e.getMessage());
-
                 }catch(SQLException e){
-
                     Log.v("final","fail to connect"+" "+e.getMessage());
-
                 }
-
             }
-
         }.start();
     }
 }

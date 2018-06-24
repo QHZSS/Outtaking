@@ -100,9 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            error.setVisibility(error.INVISIBLE);
-                                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                            startActivity(intent);
+                                            showMessagebox();
                                         }
                                     });
                                 } else {
@@ -136,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    public void showMessagebox(View view)
+    private void showMessagebox()
     {
         new AlertDialog.Builder(this)
                 .setTitle("")
@@ -146,13 +144,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     private DialogInterface.OnClickListener click1=new DialogInterface.OnClickListener()
     {
-        @Override
-        public void onClick(DialogInterface arg0,int arg1)
-        {
-            TextView error = findViewById(R.id.error);
-            error.setVisibility(error.INVISIBLE);
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }
+      @Override
+      public void onClick(DialogInterface arg0,int arg1)
+      {
+          TextView error = findViewById(R.id.error);
+          error.setVisibility(error.INVISIBLE);
+          Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+          startActivity(intent);
+      }
     };
 }
